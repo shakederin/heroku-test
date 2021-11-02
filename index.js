@@ -3,10 +3,10 @@ const app = express();
 const path = require("path");
 const port = process.env.PORT || 8080;
 
-app.use(express.static(path.join(__dirname, "./index.html")));
+app.use(express.static(path.join(__dirname, "./src")));
 
 app.get("/", (req,res)=>{
-    res.sendFile("./index.html", {root: __dirname});
+    res.sendFile("./src/index.html", {root: __dirname});
 })
 
 app.listen(port, ()=>{
